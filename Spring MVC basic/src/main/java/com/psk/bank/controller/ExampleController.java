@@ -20,20 +20,15 @@ import com.psk.bank.repository.UserRepository;
 
 @Controller
 public class ExampleController {
-
 	
 	private UserRepository userRepository;
-	
+	private String VIEW_PAGE = "infoPage";
 	
 	@Autowired
 	public ExampleController(UserRepository userRepository) {
 		this.userRepository=userRepository;
 	}
 	
-	
-
-	private String VIEW_PAGE = "infoPage";
-
 	@RequestMapping(value = "/modelAndView", method = RequestMethod.GET)
 	public ModelAndView modelAndView() {
 
