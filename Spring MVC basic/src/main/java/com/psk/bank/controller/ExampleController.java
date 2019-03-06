@@ -83,6 +83,16 @@ public class ExampleController {
 		return VIEW_PAGE;
 	}
 
+	@RequestMapping(value = "requestParamExample", method = RequestMethod.GET)
+	public String requestParamExample(Model model, @RequestParam(value="id", required = false) String id,
+			@RequestParam(value="name", required = false) String name) {
+
+		model.addAttribute("message", id + " " + name);
+
+		return VIEW_PAGE;
+	}
+	
+	
 	///////////////////////////// @ResponseBody
 
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
